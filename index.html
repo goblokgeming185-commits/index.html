@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sosial Media</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #080014, #26005c);
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        /* Tombol utama */
+        .social-button {
+            border: none;
+            padding: 15px 28px;
+            border-radius: 15px;
+            background: linear-gradient(135deg, #7b2cff, #b000ff);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+
+            box-shadow: 0 10px 30px rgba(120, 0, 255, .35);
+
+            transition: .3s;
+        }
+
+        .social-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(120, 0, 255, .5);
+        }
+
+        .social-button:active {
+            transform: scale(.95);
+        }
+
+        /* Popup */
+        .menu {
+            width: 300px;
+            margin-top: 18px;
+            padding: 18px;
+
+            border-radius: 20px;
+
+            background: rgba(255,255,255,.1);
+            border: 1px solid rgba(255,255,255,.2);
+
+            backdrop-filter: blur(20px);
+
+            opacity: 0;
+            transform: translateY(-15px) scale(.9);
+            pointer-events: none;
+
+            transition: .3s;
+        }
+
+        .menu.show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+            pointer-events: auto;
+        }
+
+        /* Link WhatsApp */
+        .whatsapp {
+            display: block;
+            padding: 15px;
+
+            border-radius: 14px;
+
+            background: #25D366;
+            color: white;
+
+            text-decoration: none;
+            font-weight: bold;
+
+            transition: .25s;
+        }
+
+        .whatsapp:hover {
+            transform: scale(1.04);
+            box-shadow: 0 8px 20px rgba(37,211,102,.4);
+        }
+
+        .icon {
+            font-size: 22px;
+            vertical-align: middle;
+            margin-right: 8px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <button class="social-button" onclick="toggleMenu()">
+            🔗 Sosial Media
+        </button>
+
+        <div class="menu" id="menu">
+
+            <a
+                class="whatsapp"
+                href="https://chat.whatsapp.com/JsQde6f8PjZK9kYAoqGp7k"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                <span class="icon">💬</span>
+                Grup WhatsApp
+            </a>
+
+        </div>
+
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("menu");
+
+            menu.classList.toggle("show");
+        }
+    </script>
+
+</body>
+</html>
